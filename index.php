@@ -33,7 +33,7 @@
             <div class="col-7">
                 <ul class="list-group">
                     <li v-for="(todo, index) in todoList" class="list-group-item d-flex justify-content-between align-items-center">
-                        <span> {{ todo.text }} </span>
+                        <span :class="{ 'text-decoration-line-through': todo.done }"> {{ todo.text }} </span>
                         <button @click="deleteTodo(index)" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                     </li>
                 </ul>
