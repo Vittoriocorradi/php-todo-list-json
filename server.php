@@ -2,11 +2,11 @@
 
 $todo_list = [
     [
-        'text' => 'html',
+        'text' => 'Html',
         'done' => 'true'
     ],
     [
-        'text' => 'css',
+        'text' => 'Css',
         'done' => 'true'
     ],
     [

@@ -25,9 +25,7 @@
             </div>
             <div class="col-7">
                 <ul class="list-group">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    <li v-for="todo in todoList" class="list-group-item"> {{ todo.text }} </li>
                 </ul>
             </div>
             <div class="col-7">
