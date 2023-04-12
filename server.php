@@ -1,5 +1,7 @@
 <?php
 
+$newTodo = isset($_POST['newtodo']) ? $_POST['newtodo'] : NULL;
+
 $todo_list = [
     [
         'text' => 'Html',
@@ -14,6 +16,13 @@ $todo_list = [
         'done' => 'false'
     ]
 ];
+
+if($newTodo !== '') {
+    $todo_list[] = [
+        'text' => $newTodo,
+        'done' => 'false'
+    ];
+}
 
 header('Content-Type: application/json');
 

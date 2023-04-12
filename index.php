@@ -20,21 +20,31 @@
     <!-- Vue Container -->
     <div id="app" class="p-5">
         <div class="row justify-content-center gy-4">
+
+            <!-- Title -->
             <div class="col-7">
                 <h1 class="text-center">Todo List</h1>
             </div>
+            <!-- /Title -->
+
+            <!-- Todo List -->
             <div class="col-7">
                 <ul class="list-group">
                     <li v-for="todo in todoList" class="list-group-item"> {{ todo.text }} </li>
                 </ul>
             </div>
+            <!-- /Todo List -->
+
+            <!-- Form -->
             <div class="col-7">
-                <div class="input-group mb-3">
+                <form @submit.prevent="addTodo" class="input-group mb-3">
                     <label for="input-text"></label>
-                    <input type="text" class="form-control" placeholder="Inserisci elemento..." id="input-text" aria-describedby="button">
+                    <input type="text" class="form-control" placeholder="Inserisci elemento..." id="input-text" aria-describedby="button" v-model="newTodo">
                     <button class="btn btn-outline-secondary" id="button">Inserisci</button>
-                </div>
+                </form>
             </div>
+            <!-- /Form -->
+
         </div>
     </div>
 
