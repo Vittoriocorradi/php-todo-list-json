@@ -34,7 +34,7 @@
                 <div class="input-group mb-3">
                     <label for="input-text"></label>
                     <input type="text" class="form-control" placeholder="Inserisci elemento..." id="input-text" aria-describedby="button">
-                    <button class="btn btn-outline-secondary" id="button">Button</button>
+                    <button class="btn btn-outline-secondary" id="button">Inserisci</button>
                 </div>
             </div>
         </div>
