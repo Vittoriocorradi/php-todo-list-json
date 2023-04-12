@@ -1,6 +1,7 @@
 <?php
 
 $newTodo = isset($_POST['newtodo']) ? $_POST['newtodo'] : NULL;
+$index = isset($_GET['index']) ? $_GET['index'] : NULL;
 
 $todo_list = file_get_contents(__DIR__.'/todo-list.json');
 
@@ -11,6 +12,10 @@ if ($newTodo !== NULL) {
                 'text' => $newTodo,
                 'done' => false
             ];
+}
+
+if ($index !== NULL) {
+    array_splice($todo_list, $index, 1);
 }
 
 $todo_list = json_encode($todo_list);
