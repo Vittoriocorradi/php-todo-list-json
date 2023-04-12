@@ -2,28 +2,21 @@
 
 $newTodo = isset($_POST['newtodo']) ? $_POST['newtodo'] : NULL;
 
-$todo_list = [
-    [
-        'text' => 'Html',
-        'done' => 'true'
-    ],
-    [
-        'text' => 'Css',
-        'done' => 'true'
-    ],
-    [
-        'text' => 'Responsive design',
-        'done' => 'false'
-    ]
-];
+$todo_list = file_get_contents(__DIR__.'/todo-list.json');
 
-if($newTodo !== '') {
+$todo_list = json_decode($todo_list, true);
+
+if ($newTodo !== NULL) {
     $todo_list[] = [
-        'text' => $newTodo,
-        'done' => 'false'
-    ];
+                'text' => $newTodo,
+                'done' => false
+            ];
 }
+
+$todo_list = json_encode($todo_list);
+
+file_put_contents(__DIR__.'/todo-list.json', $todo_list);
 
 header('Content-Type: application/json');
 
-echo json_encode($todo_list);
+echo $todo_list;
